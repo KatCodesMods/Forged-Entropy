@@ -1,0 +1,6 @@
+// 1.20.4	2024-02-13T21:12:37.996514	Tags for minecraft:block mod id forged_entropy
+9c18901c0dc1b3072bd80cbbc5af1ac6ca686bb5 data/forged_entropy/tags/blocks/ignored_by_midas_touch.json
+aa711c4fcadbc22963b5743f5e945fe02bd262df data/forged_entropy/tags/blocks/not_replaced_by_events.json
+e1c0994b0c3e9765b676974b8de993aeeca25a18 data/forged_entropy/tags/blocks/not_replaced_by_zeus_ult.json
+aefd14ab64b6f949d98eadce3eb335d9d538609d data/forged_entropy/tags/blocks/shown_during_xray.json
+cf0c126e61ce31c1e85d9d76e3c2eb7d17d4aa20 data/forged_entropy/tags/blocks/void_sight_breaks.json

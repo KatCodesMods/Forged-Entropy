@@ -1,0 +1,4 @@
+// 1.20.4	2024-02-13T21:50:08.683134	Tags for minecraft:entity_type mod id forged_entropy
+1a52c209a404419cf8a8091a84d25901ca55d935 data/forged_entropy/tags/entity_types/do_not_explode.json
+e00f2931577049b9a4400a87ed9c249373be376c data/forged_entropy/tags/entity_types/do_not_ignite.json
+e61f64379227f2a77ae0e0aeca2115183fab27bc data/forged_entropy/tags/entity_types/ignored_by_forcefield_and_entity_magnet.json

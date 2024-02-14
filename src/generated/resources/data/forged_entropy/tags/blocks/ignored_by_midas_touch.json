@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#forged_entropy:not_replaced_by_events",
+    "minecraft:air",
+    "minecraft:gold_block",
+    "minecraft:gold_ore",
+    "minecraft:raw_gold_block",
+    "minecraft:nether_gold_ore"
+  ]
+}

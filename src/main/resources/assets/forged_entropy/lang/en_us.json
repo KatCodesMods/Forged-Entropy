@@ -1,0 +1,25 @@
+{
+  "forged_entropy.chat.new_event": "Starting %s...",
+  "forged_entropy.chat.fail_event": "Failed to start %s...",
+  "forged_entropy.events.BulldozeEvent": "Bulldoze",
+  "forged_entropy.events.AddHeartEvent":"Add Heart",
+  "forged_entropy.events.HideEventsEvent":"What is happening!???",
+  "forged_entropy.events.AdventureEvent":"Adventure Mode!",
+  "forged_entropy.events.AngryBeeEvent":"Angry Bees",
+  "forged_entropy.events.ArmorCurseEvent": "You wont take off your clothes!",
+  "forged_entropy.events.ArrowRainEvent": "Arrow Rain",
+  "forged_entropy.events.BeeEvent": "Bee or not to Bee",
+  "forged_entropy.events.BlackAndWhiteEvent": "1950s",
+  "forged_entropy.events.BlazeEvent": "Tough Blaze",
+  "forged_entropy.events.BlindnessEvent": "Blindness",
+  "forged_entropy.events.BlurEvent": "Where Did I Leave My Glasses?",
+  "forged_entropy.events.ChickenRainEvent": "Chicken Rain",
+  "forged_entropy.events.CinematicScreenEvent": "Cinematic Camera",
+  "forged_entropy.events.CloseRandomTPEvent": "Teleport Player A Few Meters",
+  "forged_entropy.events.ConstantAttackingEvent": "Constant Attacking",
+  "forged_entropy.events.ConstantInteractingEvent": "Constant Interacting",
+  "forged_entropy.events.CreativeFlightEvent": "Creative Flight",
+  "forged_entropy.events.CreeperEvent": "Creeper!",
+
+  "forged_entropy.events.HyperChickenRainEvent": "Look at all them chickens!"
+}

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "dev.katcodes.forgedentropy.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "forged_entropy.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "GameRendererMixin",
+    "MultiPlayerGameModeAccessor",
+    "MinecraftClientAccessor"
+  ],
+  "minVersion": "0.8"
+}

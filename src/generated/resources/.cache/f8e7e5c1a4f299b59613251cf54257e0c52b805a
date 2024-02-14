@@ -1,0 +1,6 @@
+// 1.20.4	2024-02-13T21:49:35.286625	Tags for minecraft:item mod id forged_entropy
+42d81450c95baaa5fd237736abd70098c7bc94af data/forged_entropy/tags/items/banned.json
+00c105ab012d69698fc45a4754c468f89ecad515 data/forged_entropy/tags/items/does_not_drop_randomly.json
+00c105ab012d69698fc45a4754c468f89ecad515 data/forged_entropy/tags/items/does_not_rain.json
+8a3b6c43de5696d22edea798ffefe18769ecd1fb data/forged_entropy/tags/items/ignored_by_midas_touch.json
+43307296cfeb21c805f9264829f0c2d64c86df0b data/forged_entropy/tags/items/midas_touch_golden_items.json

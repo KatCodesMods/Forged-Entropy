@@ -1,0 +1,15 @@
+{
+  "values": [
+    "minecraft:furnace",
+    "minecraft:blast_furnace",
+    "minecraft:smoker",
+    {
+      "id": "#forge:chests",
+      "required": false
+    },
+    {
+      "id": "#forge:barrels",
+      "required": false
+    }
+  ]
+}
