@@ -56,7 +56,9 @@ public abstract class AbstractTimedEvent implements ChaosEvent {
 
     @Override
     public void end() {
+        ForgedEntropyMod.eventHandler.getActivePlayers().forEach(this::endPlayer);
         this.hasEnded = true;
+
     }
 
     @OnlyIn(Dist.CLIENT)

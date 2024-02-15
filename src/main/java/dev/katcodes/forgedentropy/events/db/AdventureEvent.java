@@ -4,24 +4,34 @@ import dev.katcodes.forgedentropy.Config;
 import dev.katcodes.forgedentropy.ForgedEntropyMod;
 import dev.katcodes.forgedentropy.events.AbstractTimedEvent;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.GameType;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class AdventureEvent extends AbstractTimedEvent {
 
+
     @Override
-    public void init() {
-        ForgedEntropyMod.eventHandler.getActivePlayers().forEach(serverPlayer -> serverPlayer.setGameMode(GameType.ADVENTURE));
+    public void initPlayer(ServerPlayer player) {
+        player.setGameMode(GameType.ADVENTURE);
+        super.initPlayer(player);
     }
-    public void end() {
-        ForgedEntropyMod.eventHandler.getActivePlayers().forEach(serverPlayer -> serverPlayer.setGameMode(GameType.SURVIVAL));
-        this.hasEnded=true;
+
+    @Override
+    public void endPlayer(ServerPlayer player) {
+        player.setGameMode(GameType.SURVIVAL);
+        super.endPlayer(player);
+
     }
+
 
     @Override
     public void tick() {
         super.tick();
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void render(GuiGraphics graphics, float tickDelta) {
 

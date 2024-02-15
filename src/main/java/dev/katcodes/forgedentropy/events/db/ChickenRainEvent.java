@@ -8,6 +8,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 import java.util.Random;
 
@@ -22,9 +24,10 @@ public class ChickenRainEvent extends AbstractTimedEvent {
 
     @Override
     public void end() {
-        this.hasEnded=true;
+        super.end();
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void render(GuiGraphics graphics, float tickDelta) {
 

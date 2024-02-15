@@ -11,6 +11,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -36,7 +37,6 @@ public class VotingServer {
             ForgedEntropyMod.LOGGER.warn("Vote skipped, VoteID does not match ({} != {})",this.voteId,voteId);
             return;
         }
-
         if(votes.length==this.totalVotes.length) {
             for(int i=0;i<votes.length;i++){
                 this.totalVotes[i]+=votes[i];
@@ -121,7 +121,7 @@ public class VotingServer {
     }
 
     public void sendPollStatusToPlayers() {
-        PollStatePacket pollStatePacket=new PollStatePacket(voteId,totalVotes,totalVoteCount);
+        PollStatePacket pollStatePacket=new PollStatePacket(voteId,totalVotes.clone(),totalVoteCount);
         PacketDistributor.ALL.noArg().send(pollStatePacket);
     }
 }

@@ -1,7 +1,9 @@
 package dev.katcodes.forgedentropy.events;
 
+import dev.katcodes.forgedentropy.ForgedEntropyMod;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -9,6 +11,10 @@ import net.neoforged.api.distmarker.OnlyIn;
 public interface ChaosEvent {
 
     default void init() {
+        ForgedEntropyMod.eventHandler.getActivePlayers().forEach(this::initPlayer);
+    }
+
+    default void initPlayer(ServerPlayer player) {
 
     }
 
@@ -16,7 +22,13 @@ public interface ChaosEvent {
     default void initClient() {
     }
 
-    void end();
+    default void end() {
+        ForgedEntropyMod.eventHandler.getActivePlayers().forEach(this::endPlayer);
+    }
+
+    default void endPlayer(ServerPlayer player) {
+
+    }
 
     @OnlyIn(Dist.CLIENT)
     void endClient();

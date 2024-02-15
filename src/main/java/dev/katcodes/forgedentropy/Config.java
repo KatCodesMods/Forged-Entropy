@@ -1,5 +1,8 @@
 package dev.katcodes.forgedentropy;
 
+import dev.katcodes.forgedentropy.client.integrations.Integration;
+import dev.katcodes.forgedentropy.client.integrations.IntegrationTypes;
+import dev.katcodes.forgedentropy.events.ChaosEventRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -32,8 +35,22 @@ public class Config
         ACCESSIBILITY = BUILDER.comment("Remove flashy effects").define("accessibilityMode", false);
         BUILDER.pop();
     }
+    private static void InitializeIntegration()
+    {
+        BUILDER.push("Integrations");
+        IntegrationSettings.INTEGRATION_TYPE = BUILDER.comment("what kind of voting should be enabled").defineEnum("integrationType",IntegrationTypes.None);
+        IntegrationSettings.SEND_CHAT_MESSAGES = BUILDER.comment("Should the vote options be sent as a chat message").define("sendChatMessages",false);
+        IntegrationSettings.SHOW_CURRENT_PERCENTAGE=BUILDER.comment("Should the current vote percentage be shown? (Note effects the overlay too)").define("showCurrentPercentage",true);
+        IntegrationSettings.SHOW_UPCOMING_EVENTS=BUILDER.comment("Show the upcoming events on minecraft screen").define("showUpcomingEvents",false);
+        BUILDER.push("Twitch");
+        IntegrationSettings.TwitchSettings.AUTH_TOKEN= BUILDER.comment("Twitch oauth token").define("authToken","");
+        IntegrationSettings.TwitchSettings.CHANNEL=BUILDER.comment("Twitch channel to watch/vote in").define("channel","");
+        BUILDER.pop();
+        BUILDER.pop();
+    }
     static {
         InitializeGeneral();
+        InitializeIntegration();
     }
 
 
@@ -46,6 +63,8 @@ public class Config
     private static ModConfigSpec.EnumValue<UIStyle> UI_STYLE;
     private static ModConfigSpec.ConfigValue<List<? extends String>> DISABLED_EVENTS;
     private static ModConfigSpec.BooleanValue ACCESSIBILITY;
+
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static int timerDuration;
@@ -56,8 +75,28 @@ public class Config
     public static List<String> disabledEvents;
     public static boolean accessibilityMode;
 
+    public static class IntegrationSettings {
+        public static IntegrationTypes integrationType;
+        public static boolean sendChatMessages = true;
+        public static boolean showCurrentPercentage = true;
+
+        public static boolean showUpcomingEvents = true;
+
+        private static ModConfigSpec.EnumValue<IntegrationTypes> INTEGRATION_TYPE;
+        private static  ModConfigSpec.BooleanValue SEND_CHAT_MESSAGES;
+        private static ModConfigSpec.BooleanValue SHOW_CURRENT_PERCENTAGE;
+        private static ModConfigSpec.BooleanValue SHOW_UPCOMING_EVENTS;
+
+        public static class TwitchSettings {
+            public static String authToken;
+            public static String channel;
+            private static ModConfigSpec.ConfigValue<String> AUTH_TOKEN;
+            private static ModConfigSpec.ConfigValue<String> CHANNEL;
+        }
+    }
+
     private static boolean validateEventName(final Object obj) {
-        return obj instanceof String;
+        return obj instanceof String; // && ChaosEventRegistry.EntropyEvents.keySet().contains();
     }
 
     @SubscribeEvent
@@ -71,6 +110,12 @@ public class Config
         uiStyle = UI_STYLE.get();
         disabledEvents = new ArrayList<>(DISABLED_EVENTS.get());
         accessibilityMode = ACCESSIBILITY.get();
+        IntegrationSettings.integrationType=IntegrationSettings.INTEGRATION_TYPE.get();
+        IntegrationSettings.sendChatMessages= IntegrationSettings.SEND_CHAT_MESSAGES.get();
+        IntegrationSettings.showCurrentPercentage=IntegrationSettings.SHOW_CURRENT_PERCENTAGE.get();
+        IntegrationSettings.showUpcomingEvents=IntegrationSettings.SHOW_UPCOMING_EVENTS.get();
+        IntegrationSettings.TwitchSettings.authToken=IntegrationSettings.TwitchSettings.AUTH_TOKEN.get();
+        IntegrationSettings.TwitchSettings.channel= IntegrationSettings.TwitchSettings.CHANNEL.get();
 
     }
 }

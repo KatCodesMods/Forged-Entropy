@@ -7,9 +7,12 @@ import dev.katcodes.forgedentropy.mixin.MultiPlayerGameModeAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.InteractionHand;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class ConstantAttackingEvent extends AbstractTimedEvent {
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void tickClient() {
         super.tickClient();
@@ -31,17 +34,20 @@ public class ConstantAttackingEvent extends AbstractTimedEvent {
         cancelBlockBreaking(client);
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void endClient() {
         cancelBlockBreaking(Minecraft.getInstance());
         this.hasEnded=true;
     }
 
+    @OnlyIn(Dist.CLIENT)
     private void cancelBlockBreaking(Minecraft instance) {
         ((MultiPlayerGameModeAccessor)instance.gameMode).setIsDestroying(true);
         ((MinecraftClientAccessor)instance).callContinueAttack(false);
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void render(GuiGraphics graphics, float tickDelta) {
 

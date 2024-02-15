@@ -5,12 +5,15 @@ import dev.katcodes.forgedentropy.events.AbstractTimedEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class ConstantInteractingEvent extends AbstractTimedEvent {
     private boolean hasScreenOpen = false;
     private boolean hadScreenOpenLastTick = false;
     private int afterScreenClosedCooldown = 0;
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void tickClient() {
         super.tickClient();
@@ -30,12 +33,14 @@ public class ConstantInteractingEvent extends AbstractTimedEvent {
             client.options.keyUse.setDown(true);
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void endClient() {
         super.endClient();
         Minecraft.getInstance().options.keyUse.setDown(false);
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void render(GuiGraphics graphics, float tickDelta) {
 

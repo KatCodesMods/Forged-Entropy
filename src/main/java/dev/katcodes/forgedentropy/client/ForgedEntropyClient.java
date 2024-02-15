@@ -31,6 +31,8 @@ public class ForgedEntropyClient {
     private PostChain shader_black_and_white;
     private PostChain shader_blur;
 
+    private PostChain shader_monitor;
+
 
     @SubscribeEvent
     public static void renderHud(RenderGuiOverlayEvent.Post event) {
@@ -55,6 +57,13 @@ public class ForgedEntropyClient {
             assert shader_blur != null : "Blur shader is null";
             ShaderManager.render(shader_blur,tickDelta);
         }
+
+        else if(CurrentState.Get().monitor) {
+            if(shader_monitor==null)
+                shader_monitor=ShaderManager.register(new ResourceLocation(MODID,"shaders/post/crt.json"));
+            assert shader_monitor!=null : "CRT shader is null";
+            ShaderManager.render(shader_monitor,tickDelta);
+        }
     }
     public  void initialize() {
         LOGGER.info("Initializing Forged Entropy Client Mod");
@@ -66,5 +75,7 @@ public class ForgedEntropyClient {
             shader_black_and_white.resize(pWidth,pHeight);
         if(shader_blur!=null)
             shader_blur.resize(pWidth, pHeight);
+        if(shader_monitor!=null)
+            shader_monitor.resize(pWidth, pHeight);
     }
 }

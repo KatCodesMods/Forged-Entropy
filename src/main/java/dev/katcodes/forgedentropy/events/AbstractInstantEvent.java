@@ -16,10 +16,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 import java.util.List;
 
 public abstract class AbstractInstantEvent implements ChaosEvent{
-    @Override
-    public void end() {
 
-    }
 
     @Override
     public void endClient() {

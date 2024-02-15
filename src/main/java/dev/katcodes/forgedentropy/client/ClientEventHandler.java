@@ -5,7 +5,9 @@ import dev.katcodes.forgedentropy.CurrentState;
 import dev.katcodes.forgedentropy.ForgedEntropyMod;
 import dev.katcodes.forgedentropy.UIStyle;
 import dev.katcodes.forgedentropy.client.UIStyles.GTAVUIRenderer;
+import dev.katcodes.forgedentropy.client.UIStyles.MinecraftUIRenderer;
 import dev.katcodes.forgedentropy.client.UIStyles.UIRenderer;
+import dev.katcodes.forgedentropy.client.integrations.twitch.TwitchIntegration;
 import dev.katcodes.forgedentropy.events.ChaosEvent;
 import dev.katcodes.forgedentropy.events.ChaosEventRegistry;
 import net.minecraft.client.Minecraft;
@@ -16,6 +18,7 @@ import java.util.List;
 
 public class ClientEventHandler {
     public List<ChaosEvent> currentEvents = new ArrayList<>();
+    public VotingClient votingClient;
     short timerDuration;
     UIRenderer renderer = null;
     final short timerDurationFinal;
@@ -29,19 +32,26 @@ public class ClientEventHandler {
         this.serverIntegrations = serverIntegrations;
         Config.baseEventDuration = baseEventDuration;
 
-        //todo: Add integrations here
+        if(Config.integrations && serverIntegrations) {
+            votingClient=new VotingClient();
+            votingClient.setIntegrations(switch (Config.IntegrationSettings.integrationType) {
+                case Twitch -> new TwitchIntegration(votingClient);
+                default -> new TwitchIntegration(votingClient);
+            });
+            votingClient.enable();
+        }
 
         if(Config.uiStyle == UIStyle.GTAV) {
-            //todo: once voting client, pass it here
-            renderer = new GTAVUIRenderer();
-        }
+            renderer = new GTAVUIRenderer(votingClient);
+        } else
+            renderer = new MinecraftUIRenderer();
     }
 
     public void tick(short eventCountDown) {
         this.timerDuration = (short) (timerDurationFinal / CurrentState.Get().timeMultiplier);
         this.eventCountDown = eventCountDown;
-        if (eventCountDown % 10 == 0 && false) {//&& votingClient == null) {
-            // todo: send votes
+        if (eventCountDown % 10 == 0 && votingClient != null) {
+            votingClient.sendVotes();
         }
         if(!Minecraft.getInstance().player.isSpectator()) {
             for(ChaosEvent event: currentEvents) {
@@ -69,17 +79,12 @@ public class ClientEventHandler {
         }
 
         // todo: Render poll if needed
+        if(Config.integrations && serverIntegrations && votingClient!=null && votingClient.enabled) {
+            votingClient.render(drawContext);
+        }
     }
     public void remove(int i) {
         currentEvents.remove(i);
-    }
-
-    public void updatePollStatus(int voteId, int[] totalVotes, int totalVotesCount) {
-
-    }
-
-    public void newPoll(int voteID, List<String> events) {
-
     }
 
     public void endChaos() {
@@ -89,7 +94,8 @@ public class ClientEventHandler {
                 eventPair.endClient();
         });
 
-        //todo: End voting
+        if(votingClient!=null && votingClient.enabled)
+            votingClient.disable();
 
         //todo: Reset settings
     }

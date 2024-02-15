@@ -1,6 +1,9 @@
 {
   "forged_entropy.chat.new_event": "Starting %s...",
   "forged_entropy.chat.fail_event": "Failed to start %s...",
+  "entropy.voting.total": "Total Votes: %d",
+  "entropy.title": "Entropy: Chaos Mod",
+  "entropy.voting.randomEvent":"Random Event",
   "forged_entropy.events.BulldozeEvent": "Bulldoze",
   "forged_entropy.events.AddHeartEvent":"Add Heart",
   "forged_entropy.events.HideEventsEvent":"What is happening!???",
@@ -20,6 +23,18 @@
   "forged_entropy.events.ConstantInteractingEvent": "Constant Interacting",
   "forged_entropy.events.CreativeFlightEvent": "Creative Flight",
   "forged_entropy.events.CreeperEvent": "Creeper!",
-
+  "forged_entropy.events.CRTEvent": "Monitor Downgrade",
+  "forged_entropy.events.CurseRandomGearEvent": "Curse random gear",
+  "forged_entropy.events.DamageItemsEvent": "Damage Player Items",
+  "forged_entropy.events.DeathSightEvent": "Death Sight",
+  "forged_entropy.events.DowngradeRandomGearEvent": "Downgrade random gear!",
+  "forged_entropy.events.DropHandItemEvent": "Drop Item in Hand",
+  "forged_entropy.events.DropInventoryEvent": "Drop Inventory",
+  "forged_entropy.events.DVDEvent": "DVD Screen Saver",
+  "forged_entropy.events.EnchantRandomGearEvent": "Enchant Random gear",
+  "forged_entropy.events.EndermiteEvent": "Endermites",
+  "forged_entropy.events.EntityMagnetEvent": "Entity Magnet",
+  "forged_entropy.events.ExplodeNearbyEntitiesEvent": "Explode Nearby Entities",
+  "forged_entropy.events.ForcefieldEvent": "Forcefield",
   "forged_entropy.events.HyperChickenRainEvent": "Look at all them chickens!"
 }

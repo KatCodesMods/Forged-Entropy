@@ -81,13 +81,13 @@ public class ClientNetworkHandler {
     public void update_poll(final PollStatePacket packet, PlayPayloadContext context) {
         if(ForgedEntropyClient.clientEventHandler==null)
             return;
-        ForgedEntropyClient.clientEventHandler.updatePollStatus(packet.voteId,packet.totalVotes,packet.totalVotesCount);
+        ForgedEntropyClient.clientEventHandler.votingClient.updatePollStatus(packet.voteId,packet.totalVotes,packet.totalVotesCount);
     }
 
     public void new_poll(final NewPollPacket packet, PlayPayloadContext context) {
         if(ForgedEntropyClient.clientEventHandler==null)
             return;
-        ForgedEntropyClient.clientEventHandler.newPoll(packet.voteID,packet.events);
+        ForgedEntropyClient.clientEventHandler.votingClient.newPoll(packet.voteID,packet.events.size()+1,packet.events);
     }
 
     @SubscribeEvent

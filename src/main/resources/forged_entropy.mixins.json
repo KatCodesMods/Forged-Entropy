@@ -8,7 +8,8 @@
   "client": [
     "GameRendererMixin",
     "MultiPlayerGameModeAccessor",
-    "MinecraftClientAccessor"
+    "MinecraftClientAccessor",
+    "BossBarAccessor"
   ],
   "minVersion": "0.8"
 }

@@ -5,6 +5,8 @@ import dev.katcodes.forgedentropy.EntropyTags;
 import dev.katcodes.forgedentropy.ForgedEntropyMod;
 import dev.katcodes.forgedentropy.events.AbstractTimedEvent;
 import net.minecraft.client.gui.GuiGraphics;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public class BulldozeEvent extends AbstractTimedEvent {
     @Override
@@ -27,6 +29,7 @@ public class BulldozeEvent extends AbstractTimedEvent {
         super.tick();
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void render(GuiGraphics graphics, float tickDelta) {
 

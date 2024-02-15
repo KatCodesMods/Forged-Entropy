@@ -54,7 +54,9 @@ public class ServerNetworkHandler {
     }
 
     public void update_poll(final PollStatePacket packet, PlayPayloadContext context) {
-
+        if(ForgedEntropyMod.eventHandler==null || ForgedEntropyMod.eventHandler.voting==null)
+            return;
+        ForgedEntropyMod.eventHandler.voting.receiveVotes(packet.voteId, packet.totalVotes);
     }
     public void new_poll(final NewPollPacket packet, PlayPayloadContext context) {
 

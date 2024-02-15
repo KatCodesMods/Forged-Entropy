@@ -53,4 +53,11 @@ public class CurrentState {
      */
     public boolean ignoreVariableFov=false;
 
+    /**
+     * Use Monitor shader
+     */
+    public boolean monitor;
+
+
+
 }

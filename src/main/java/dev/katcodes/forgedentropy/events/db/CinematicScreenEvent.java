@@ -5,11 +5,14 @@ import dev.katcodes.forgedentropy.CurrentState;
 import dev.katcodes.forgedentropy.events.AbstractTimedEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import org.joml.Math;
 
 public class CinematicScreenEvent extends AbstractTimedEvent {
     public boolean originalCamera;
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void initClient() {
         super.initClient();
@@ -19,11 +22,13 @@ public class CinematicScreenEvent extends AbstractTimedEvent {
         CurrentState.Get().fov=60;
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void tickClient() {
         Minecraft.getInstance().options.smoothCamera=true;
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void endClient() {
         this.hasEnded=true;
@@ -32,6 +37,7 @@ public class CinematicScreenEvent extends AbstractTimedEvent {
         CurrentState.Get().fov=0;
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void render(GuiGraphics graphics, float tickDelta) {
         int borderHeight = (int) Math.floor(Minecraft.getInstance().getWindow().getGuiScaledHeight()*0.12f);

@@ -124,6 +124,7 @@ public class ForgedEntropyMod
         registrar.play(NetworkingIdentifiers.REMOVE_ENDED, RemoveEndedPacket::new, handler -> handler.client(ClientNetworkHandler.Get()::remove_ended).server(ServerNetworkHandler.Get()::remove_ended));
         registrar.play(NetworkingIdentifiers.ADD_EVENT, AddEventPacket::new, handler -> handler.client(ClientNetworkHandler.Get()::add_event).server(ServerNetworkHandler.Get()::add_event));
         registrar.play(NetworkingIdentifiers.POLL_STATUS,PollStatePacket::new,handler -> handler.client(ClientNetworkHandler.Get()::update_poll).server(ServerNetworkHandler.Get()::update_poll));
+        registrar.play(NetworkingIdentifiers.NEW_POLL,NewPollPacket::new,handler -> handler.client(ClientNetworkHandler.Get()::new_poll).server(ServerNetworkHandler.Get()::new_poll));
         registrar.play(NetworkingIdentifiers.JOIN_HANDSHAKE,JoinHandshakePacket::new,handler -> handler.client(ClientNetworkHandler.Get()::join_handshake).server(ServerNetworkHandler.Get()::join_handshake));
     }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

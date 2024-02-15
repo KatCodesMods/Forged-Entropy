@@ -5,6 +5,7 @@ import dev.katcodes.forgedentropy.ForgedEntropyMod;
 import dev.katcodes.forgedentropy.events.AbstractTimedEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -12,6 +13,7 @@ import net.neoforged.api.distmarker.OnlyIn;
 public class CreativeFlightEvent extends AbstractTimedEvent {
 
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void initClient() {
         super.initClient();
@@ -24,6 +26,7 @@ public class CreativeFlightEvent extends AbstractTimedEvent {
     }
 
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void endClient() {
         super.endClient();
@@ -37,23 +40,20 @@ public class CreativeFlightEvent extends AbstractTimedEvent {
 
 
     @Override
-    public void init() {
-        super.init();
-        ForgedEntropyMod.eventHandler.getActivePlayers().forEach(serverPlayer -> {
-            if(!(serverPlayer.isCreative() || serverPlayer.isSpectator()))
-                serverPlayer.getAbilities().mayfly = true;
-        });
+    public void initPlayer(ServerPlayer player) {
+        if(!(player.isCreative() || player.isSpectator()))
+            player.getAbilities().mayfly = true;
+        super.initPlayer(player);
     }
 
     @Override
-    public void end() {
-        super.end();
-        ForgedEntropyMod.eventHandler.getActivePlayers().forEach(serverPlayer -> {
-            if(!(serverPlayer.isCreative() || serverPlayer.isSpectator()))
-                serverPlayer.getAbilities().mayfly = false;
-        });
+    public void endPlayer(ServerPlayer player) {
+        if(!(player.isCreative() || player.isSpectator()))
+            player.getAbilities().mayfly = false;
+        super.endPlayer(player);
     }
 
+    @OnlyIn(Dist.CLIENT)
     @Override
     public void render(GuiGraphics graphics, float tickDelta) {
 
