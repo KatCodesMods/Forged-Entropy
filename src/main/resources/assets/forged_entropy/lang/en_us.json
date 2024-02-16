@@ -35,6 +35,17 @@
   "forged_entropy.events.EndermiteEvent": "Endermites",
   "forged_entropy.events.EntityMagnetEvent": "Entity Magnet",
   "forged_entropy.events.ExplodeNearbyEntitiesEvent": "Explode Nearby Entities",
+  "forged_entropy.events.ExplosivePickaxeEvent": "Explosive Pickaxe",
+  "forged_entropy.events.ExtremeExplosionEvent": "Extreme Explosion",
+  "forged_entropy.events.FakeFakeTeleportEvent": "Fake Fake Teleport",
+  "forged_entropy.events.FakeTeleportEvent": "Fake Teleport",
+  "forged_entropy.events.FarRandomTPEvent": "Teleport Player To A Random Location",
+  "forged_entropy.events.FatigueEvent": "Mining Fatigue",
+  "forged_entropy.events.FireEvent": "Fire Trails",
+  "forged_entropy.events.FixItemsEvent": "Fix Player Items",
+  "forged_entropy.events.FlingEntitiesEvent": "Fling All Entities",
+  "forged_entropy.events.FlipMobsEvent": "Flip Mobs Upside Down",
+  "forged_entropy.events.FlyingMachineEvent": "Flying Machine",
   "forged_entropy.events.ForcefieldEvent": "Forcefield",
   "forged_entropy.events.HyperChickenRainEvent": "Look at all them chickens!"
 }

@@ -14,6 +14,8 @@ public class CurrentState {
         return currentState;
 
     }
+
+
     public boolean forceForward = false;
 
     /**
@@ -57,6 +59,23 @@ public class CurrentState {
      * Use Monitor shader
      */
     public boolean monitor;
+
+
+    /**
+     * Will pickaxe explode blocks?
+     */
+    public boolean explodingPickaxe;
+
+
+    /**
+     * Turn fire overlay off
+     */
+    public boolean fire;
+
+    /**
+     * Visually flip all entities upside down
+     */
+    public boolean flipEntities;
 
 
 

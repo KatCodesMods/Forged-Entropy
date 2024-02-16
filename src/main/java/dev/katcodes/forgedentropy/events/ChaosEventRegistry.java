@@ -55,8 +55,19 @@ public class ChaosEventRegistry {
         EntropyEvents.put("EndermiteEvent",EndermiteEvent::new);
         EntropyEvents.put("EntityMagnetEvent",EntityMagnetEvent::new);
         EntropyEvents.put("ExplodeNearbyEntitiesEvent",ExplodeNearbyEntitiesEvent::new);
-
+        EntropyEvents.put("ExplosivePickaxeEvent",ExplosivePickaxeEvent::new);
+        EntropyEvents.put("ExtremeExplosionEvent",ExtremeExplosionEvent::new);
+        EntropyEvents.put("FakeFakeTeleport",FakeFakeTeleportEvent::new);
+        EntropyEvents.put("FakeTeleportEvent",FakeTeleportEvent::new);
+        EntropyEvents.put("FarRandomEvent",FarRandomTPEvent::new);
+        EntropyEvents.put("FatigueEvent",FatigueEvent::new);
+        EntropyEvents.put("FireEvent",FireEvent::new);
+        EntropyEvents.put("FixItems",FixItemsEvent::new);
+        EntropyEvents.put("FlingEntitiesEvent",FlingEntitiesEvent::new);
+        EntropyEvents.put("FlipMobsEvent",FlipMobsEvent::new);
+        EntropyEvents.put("FlyingMachineEvent",FlyingMachineEvent::new);
         EntropyEvents.put("ForcefieldEvent",ForcefieldEvent::new);
+
 
         EntropyEvents.put("HideEventsEvent", HideEventsEvent::new);
         EntropyEvents.put("HyperChickenRainEvent",HyperChickenRainEvent::new);
