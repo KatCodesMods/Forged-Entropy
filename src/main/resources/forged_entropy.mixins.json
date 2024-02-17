@@ -4,11 +4,15 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "forged_entropy.refmap.json",
   "mixins": [
-    "BlockMixin"
+    "BlockMixin",
+    "EntityMixin",
+    "FallingBlockEntityAccessor"
   ],
   "client": [
     "BossBarAccessor",
+    "CameraTypeMixin",
     "GameRendererMixin",
+    "KeyboardInputMixin",
     "LivingEntityRendererMixin",
     "MinecraftClientAccessor",
     "MultiPlayerGameModeAccessor",

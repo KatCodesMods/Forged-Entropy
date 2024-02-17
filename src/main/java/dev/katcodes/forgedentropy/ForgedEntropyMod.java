@@ -44,6 +44,9 @@ import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
 import net.neoforged.neoforge.registries.*;
 import org.slf4j.Logger;
 
+import static dev.katcodes.forgedentropy.client.ForgedEntropyClient.herobrineAmbiance;
+import static dev.katcodes.forgedentropy.client.ForgedEntropyClient.herobrineAmbianceID;
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ForgedEntropyMod.MODID)
 public class ForgedEntropyMod
@@ -63,6 +66,7 @@ public class ForgedEntropyMod
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::gatherData);
         modEventBus.addListener(this::registerNetwork);
+        modEventBus.addListener(this::registerEvent);
 
 
 
@@ -77,6 +81,7 @@ public class ForgedEntropyMod
         NeoForge.EVENT_BUS.register(ServerNetworkHandler.Get());
 
         NeoForge.EVENT_BUS.register(ForgedEntropyClient.class);
+
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -127,6 +132,12 @@ public class ForgedEntropyMod
         registrar.play(NetworkingIdentifiers.NEW_POLL,NewPollPacket::new,handler -> handler.client(ClientNetworkHandler.Get()::new_poll).server(ServerNetworkHandler.Get()::new_poll));
         registrar.play(NetworkingIdentifiers.JOIN_HANDSHAKE,JoinHandshakePacket::new,handler -> handler.client(ClientNetworkHandler.Get()::join_handshake).server(ServerNetworkHandler.Get()::join_handshake));
     }
+    
+    public void registerEvent(RegisterEvent event) {
+        event.register(BuiltInRegistries.SOUND_EVENT.key(), helper -> {
+            helper.register(herobrineAmbianceID,herobrineAmbiance);
+        });
+    }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
@@ -141,5 +152,7 @@ public class ForgedEntropyMod
             ForgedEntropyClient.getInstance().initialize();
 
         }
+
+
     }
 }

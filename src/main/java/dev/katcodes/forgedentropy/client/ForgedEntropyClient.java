@@ -3,11 +3,18 @@ package dev.katcodes.forgedentropy.client;
 import dev.katcodes.forgedentropy.Config;
 import dev.katcodes.forgedentropy.CurrentState;
 import net.minecraft.client.renderer.PostChain;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.RenderGuiOverlayEvent;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +23,9 @@ import static dev.katcodes.forgedentropy.ForgedEntropyMod.MODID;
 public class ForgedEntropyClient {
 
     public static final Logger LOGGER = LogManager.getLogger();
+
+    public static final ResourceLocation herobrineAmbianceID = new ResourceLocation(MODID,"ambient.herobrine");
+    public static SoundEvent herobrineAmbiance = SoundEvent.createVariableRangeEvent(herobrineAmbianceID);
     private static ForgedEntropyClient instance;
 
     public static ClientEventHandler clientEventHandler;
@@ -69,6 +79,9 @@ public class ForgedEntropyClient {
         LOGGER.info("Initializing Forged Entropy Client Mod");
 
     }
+
+
+
 
     public void resizeShaders(int pWidth, int pHeight) {
         if(shader_black_and_white!=null)

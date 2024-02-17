@@ -18,7 +18,7 @@ public class DeathSightEvent extends AbstractTimedEvent {
 
     @Override
     public void initPlayer(ServerPlayer player) {
-        var rayVector = Vec3.directionFromRotation(player.getRotationVector()).normalize().scale(64);
+        var rayVector = player.getLookAngle().normalize().scale(64);
         var fromVector = player.getEyePosition();
         var toVector = fromVector.add(rayVector);
         var box = new AABB(player.position().add(64,64,64),player.position().subtract(64,64,64));

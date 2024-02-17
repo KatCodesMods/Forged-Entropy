@@ -77,6 +77,42 @@ public class CurrentState {
      */
     public boolean flipEntities;
 
+    /**
+     * Force a third person view
+     *
+     */
+    public boolean thirdPersonView;
+
+
+    /**
+     * Make third person view front view
+     */
+    public boolean frontView;
+
+
+    /**
+     * Force the player to be riding ... something
+     */
+    public boolean forceRiding;
+
+    /**
+     * Force the player to keep jumping
+     */
+    public boolean forceJump;
+
+
+    /**
+     * Force the player to keep sneaking
+     */
+    public boolean forceSneak;
+
+
+    /**
+     * Custom fog for the player
+     */
+    public boolean customFog;
+
+
 
 
 }

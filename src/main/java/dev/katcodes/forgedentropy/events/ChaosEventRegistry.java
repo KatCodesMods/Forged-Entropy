@@ -67,9 +67,21 @@ public class ChaosEventRegistry {
         EntropyEvents.put("FlipMobsEvent",FlipMobsEvent::new);
         EntropyEvents.put("FlyingMachineEvent",FlyingMachineEvent::new);
         EntropyEvents.put("ForcefieldEvent",ForcefieldEvent::new);
-
-
+        EntropyEvents.put("ForceForwardEvent",ForceForwardEvent::new);
+        EntropyEvents.put("ForceFrontViewEvent", ForceFrontViewEvent::new);
+        EntropyEvents.put("ForceHorseRiding", ForceHorseRidingEvent::new);
+        EntropyEvents.put("ForceJump2Event",ForceJump2Event::new);
+        EntropyEvents.put("ForceJumpEvent",ForceJump2Event::new);
+        EntropyEvents.put("ForceSneakEvent",ForceSneakEvent::new);
+        EntropyEvents.put("ForceThirdPersonEvent", ForceThirdPersonEvent::new);
+        EntropyEvents.put("GiveRandomOreEvent",GiveRandomOreEvent::new);
+        EntropyEvents.put("GlassSightEvent",GlassSightEvent::new);
+        EntropyEvents.put("GravitySightEvent",GravitySightEvent::new);
+        EntropyEvents.put("HalfHeartedEvent",HalfHeartedEvent::new);
+        EntropyEvents.put("HauntedChestsEvent", HauntedChestsEvent::new);
         EntropyEvents.put("HideEventsEvent", HideEventsEvent::new);
+        EntropyEvents.put("HealEvent",HealEvent::new);
+        EntropyEvents.put("HerobrineEvent",HerobrineEvent::new);
         EntropyEvents.put("HyperChickenRainEvent",HyperChickenRainEvent::new);
     }
 
