@@ -16,6 +16,9 @@ public class KeyboardInputMixin extends Input {
         if(CurrentState.Get().forceForward) {
             this.up=true;
             this.forwardImpulse=1;
+        } else if(CurrentState.Get().invertedControls) {
+            this.forwardImpulse=-this.forwardImpulse;
+            this.leftImpulse=-this.leftImpulse;
         }
 
         if(CurrentState.Get().forceJump) {

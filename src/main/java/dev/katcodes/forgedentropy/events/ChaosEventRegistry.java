@@ -36,6 +36,7 @@ public class ChaosEventRegistry {
         EntropyEvents.put("BlindnessEvent",BlindnessEvent::new);
         EntropyEvents.put("BlurEvent", BlurEvent::new);
         EntropyEvents.put("BulldozeEvent", BulldozeEvent::new);
+        EntropyEvents.put("ButtsBotEvent", ButtsBotEvent::new);
         EntropyEvents.put("ChickenRainEvent",ChickenRainEvent::new);
         EntropyEvents.put("CinematicScreenEvent",CinematicScreenEvent::new);
         EntropyEvents.put("CloseRandomTPEvent",CloseRandomTPEvent::new);
@@ -79,10 +80,27 @@ public class ChaosEventRegistry {
         EntropyEvents.put("GravitySightEvent",GravitySightEvent::new);
         EntropyEvents.put("HalfHeartedEvent",HalfHeartedEvent::new);
         EntropyEvents.put("HauntedChestsEvent", HauntedChestsEvent::new);
-        EntropyEvents.put("HideEventsEvent", HideEventsEvent::new);
         EntropyEvents.put("HealEvent",HealEvent::new);
         EntropyEvents.put("HerobrineEvent",HerobrineEvent::new);
+        EntropyEvents.put("HideEventsEvent", HideEventsEvent::new);
+        EntropyEvents.put("HighlightAllMobsEvent",HighlightAllMobsEvent::new);
+        EntropyEvents.put("HighPitchEvent", HighPitchEvent::new);
+        EntropyEvents.put("HorseEvent", HorseEvent::new);
+        EntropyEvents.put("HungryEvent",HungryEvent::new);
         EntropyEvents.put("HyperChickenRainEvent",HyperChickenRainEvent::new);
+        EntropyEvents.put("HyperSlowEvent", HyperSlowEvent::new);
+        EntropyEvents.put("HyperSpeedEvent",HyperSpeedEvent::new);
+        EntropyEvents.put("IgniteNearbyEntitiesEvent",IgniteNearbyEntitiesEvent::new);
+        EntropyEvents.put("InfestationEvent",InfestationEvent::new);
+        EntropyEvents.put("InfiniteLavaEvent",InfiniteLavaEvent::new);
+        EntropyEvents.put("IntenseThunderStormEvent", IntenseThunderStormEvent::new);
+        EntropyEvents.put("InvertedColorsEvent", InvertedColorsEvent::new);
+        EntropyEvents.put("InvertedControlsEvent",InvertedControlsEvent::new);
+        EntropyEvents.put("InvisibleEveryoneEvent",InvisibleEveryoneEvent::new);
+        EntropyEvents.put("InvisibleHostileMobsEvent", InvisibleHostileMobsEvent::new);
+        EntropyEvents.put("InvisiblePlayerEvent",InvisiblePlayerEvent::new);
+        EntropyEvents.put("ItemRainEvent",ItemRainEvent::new);
+        EntropyEvents.put("JumpscareEvent", JumpscareEvent::new);
     }
 
 

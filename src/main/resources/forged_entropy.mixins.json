@@ -15,8 +15,10 @@
     "KeyboardInputMixin",
     "LivingEntityRendererMixin",
     "MinecraftClientAccessor",
+    "MouseHandlerMixin",
     "MultiPlayerGameModeAccessor",
-    "ScreenEffectRendererMixin"
+    "ScreenEffectRendererMixin",
+    "SoundEngineMixin"
   ],
   "minVersion": "0.8"
 }

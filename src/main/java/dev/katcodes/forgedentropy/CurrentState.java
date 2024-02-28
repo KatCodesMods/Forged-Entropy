@@ -113,6 +113,28 @@ public class CurrentState {
     public boolean customFog;
 
 
+    /**
+     * Force the player's sound to be a specific pitch
+     */
+    public boolean forcePitch;
+
+    /**
+     * Pitch to force to
+     */
+
+    public float forcedPitch;
+
+    /**
+     * Invert colours shader
+     */
+    public boolean invertedShader;
+
+    /**
+     * Invert Controls
+     */
+    public boolean invertedControls;
+
+
 
 
 }

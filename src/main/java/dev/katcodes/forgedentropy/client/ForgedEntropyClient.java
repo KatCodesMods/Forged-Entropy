@@ -42,6 +42,8 @@ public class ForgedEntropyClient {
     private PostChain shader_blur;
 
     private PostChain shader_monitor;
+    private PostChain shader_invertedColor;
+
 
 
     @SubscribeEvent
@@ -74,6 +76,12 @@ public class ForgedEntropyClient {
             assert shader_monitor!=null : "CRT shader is null";
             ShaderManager.render(shader_monitor,tickDelta);
         }
+        else if(CurrentState.Get().invertedShader) {
+            if(shader_invertedColor == null)
+                shader_invertedColor = ShaderManager.register(new ResourceLocation("shaders/post/invert.json"));
+            assert  shader_invertedColor!=null : "Invert shader is null";
+            ShaderManager.render(shader_invertedColor,tickDelta);
+        }
     }
     public  void initialize() {
         LOGGER.info("Initializing Forged Entropy Client Mod");
@@ -90,5 +98,7 @@ public class ForgedEntropyClient {
             shader_blur.resize(pWidth, pHeight);
         if(shader_monitor!=null)
             shader_monitor.resize(pWidth, pHeight);
+        if(shader_invertedColor!=null)
+            shader_invertedColor.resize(pWidth,pHeight);
     }
 }

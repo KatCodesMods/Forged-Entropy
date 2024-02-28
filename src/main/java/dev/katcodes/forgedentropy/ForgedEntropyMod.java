@@ -132,7 +132,7 @@ public class ForgedEntropyMod
         registrar.play(NetworkingIdentifiers.NEW_POLL,NewPollPacket::new,handler -> handler.client(ClientNetworkHandler.Get()::new_poll).server(ServerNetworkHandler.Get()::new_poll));
         registrar.play(NetworkingIdentifiers.JOIN_HANDSHAKE,JoinHandshakePacket::new,handler -> handler.client(ClientNetworkHandler.Get()::join_handshake).server(ServerNetworkHandler.Get()::join_handshake));
     }
-    
+
     public void registerEvent(RegisterEvent event) {
         event.register(BuiltInRegistries.SOUND_EVENT.key(), helper -> {
             helper.register(herobrineAmbianceID,herobrineAmbiance);
