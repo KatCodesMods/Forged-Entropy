@@ -134,6 +134,14 @@ public class CurrentState {
      */
     public boolean invertedControls;
 
+    /**
+     * Wobble shader
+     */
+    public boolean wobble;
+
+
+    public boolean luckyDrops;
+
 
 
 

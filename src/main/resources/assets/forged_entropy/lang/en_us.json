@@ -79,5 +79,15 @@
   "forged_entropy.events.InvisibleHostileMobsEvent":"Invisible Enemies",
     "forged_entropy.events.InvisiblePlayerEvent":"Invisible Player",
   "forged_entropy.events.ItemRainEvent":"Item Rain!",
-    "forged_entropy.events.JumpscareEvent":"Jumpscare"
+    "forged_entropy.events.JumpscareEvent":"Jumpscare",
+    "forged_entropy.events.LagEvent":"Poor Connection",
+    "forged_entropy.events.LevitationEvent":"Inverted Gravity",
+  "forged_entropy.events.LowFPSEvent":"Low FPS",
+    "forged_entropy.events.LowGravityEvent":"Low Gravity",
+    "forged_entropy.events.LowPitchEvent":"Low Pitch",
+    "forged_entropy.events.LowRenderDistanceEvent":"Low Render Distance",
+    "forged_entropy.events.LSDEvent":"Lucy In The Sky With Diamonds",
+    "forged_entropy.events.LuckyDropsEvent":"Drop Multiplier",
+    "forged_entropy.events.MeteorRainEvent":"Meteor Rain",
+  "forged_entropy.events.MidasTouchEvent":"Midas Touch"
 }

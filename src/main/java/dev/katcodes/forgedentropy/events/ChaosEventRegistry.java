@@ -101,6 +101,16 @@ public class ChaosEventRegistry {
         EntropyEvents.put("InvisiblePlayerEvent",InvisiblePlayerEvent::new);
         EntropyEvents.put("ItemRainEvent",ItemRainEvent::new);
         EntropyEvents.put("JumpscareEvent", JumpscareEvent::new);
+        EntropyEvents.put("LagEvent", LagEvent::new);
+        EntropyEvents.put("LevitationEvent",LevitationEvent::new);
+        EntropyEvents.put("LowFPSEvent",LowFPSEvent::new);
+        EntropyEvents.put("LowGravityEvent",LowGravityEvent::new);
+        EntropyEvents.put("LowPitchEvent",LowPitchEvent::new);
+        EntropyEvents.put("LowRenderDistanceEvent",LowRenderDistanceEvent::new);
+        EntropyEvents.put("LSDEvent",LSDEvent::new);
+        EntropyEvents.put("LuckyDropsEvent",LuckyDropsEvent::new);
+        EntropyEvents.put("MeteorRainEvent",MeteorRainEvent::new);
+        EntropyEvents.put("MidasTouchEvent", MidasTouchEvent::new);
     }
 
 

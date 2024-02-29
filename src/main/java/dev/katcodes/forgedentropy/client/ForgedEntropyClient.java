@@ -29,6 +29,8 @@ public class ForgedEntropyClient {
     private static ForgedEntropyClient instance;
 
     public static ClientEventHandler clientEventHandler;
+
+
     public static ForgedEntropyClient getInstance()
     {
 
@@ -43,7 +45,7 @@ public class ForgedEntropyClient {
 
     private PostChain shader_monitor;
     private PostChain shader_invertedColor;
-
+    private PostChain shader_wobble;
 
 
     @SubscribeEvent
@@ -81,6 +83,12 @@ public class ForgedEntropyClient {
                 shader_invertedColor = ShaderManager.register(new ResourceLocation("shaders/post/invert.json"));
             assert  shader_invertedColor!=null : "Invert shader is null";
             ShaderManager.render(shader_invertedColor,tickDelta);
+        } else if(CurrentState.Get().wobble) {
+            if(shader_wobble==null)
+                shader_wobble=ShaderManager.register(new ResourceLocation("shaders/post/wobble.json"));
+            assert shader_wobble!=null : "Wobble shader is null";
+            ShaderManager.render(shader_wobble,tickDelta);
+
         }
     }
     public  void initialize() {
@@ -100,5 +108,7 @@ public class ForgedEntropyClient {
             shader_monitor.resize(pWidth, pHeight);
         if(shader_invertedColor!=null)
             shader_invertedColor.resize(pWidth,pHeight);
+        if(shader_wobble!=null)
+            shader_wobble.resize(pWidth,pHeight);
     }
 }
