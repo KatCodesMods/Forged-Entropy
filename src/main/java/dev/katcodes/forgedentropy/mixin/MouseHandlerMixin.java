@@ -18,11 +18,6 @@ public class MouseHandlerMixin {
     @Shadow
     private double accumulatedDY;
 
-    @Inject(method = "turnPlayer",at = @At("HEAD"))
-    private void driftMouse(CallbackInfo ci) {
-
-    }
-
 
     @ModifyArg(method = "turnPlayer", at= @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;turn(DD)V"),index = 0)
     public double invertX(double x) {
@@ -36,5 +31,13 @@ public class MouseHandlerMixin {
         if(CurrentState.currentState.invertedControls)
             return -y;
         return y;
+    }
+
+    @Inject(method= "turnPlayer", at = @At("HEAD"))
+    private void driftMouse(CallbackInfo ci) {
+        if(CurrentState.Get().mouseDrifting) {
+            this.accumulatedDX += CurrentState.Get().mouseDriftingSignX * 1.5;
+            this.accumulatedDY += CurrentState.Get().mouseDriftingSignY * 0.1;
+        }
     }
 }

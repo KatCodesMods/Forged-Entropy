@@ -89,5 +89,22 @@
     "forged_entropy.events.LSDEvent":"Lucy In The Sky With Diamonds",
     "forged_entropy.events.LuckyDropsEvent":"Drop Multiplier",
     "forged_entropy.events.MeteorRainEvent":"Meteor Rain",
-  "forged_entropy.events.MidasTouchEvent":"Midas Touch"
+  "forged_entropy.events.MidasTouchEvent":"Midas Touch",
+    "forged_entropy.events.MiningSightEvent":"Mining Sight",
+    "forged_entropy.events.MLGBucketEvent":"MLG Water Bucket",
+    "forged_entropy.events.NightVisionEvent":"Night Vision",
+  "forged_entropy.events.NoAttckingEvent":"No Attacking Allowed",
+  "forged_entropy.events.NoDropsEvent":"No Drops",
+    "forged_entropy.events.NoiseMachineEvent":"Chimes",
+    "forged_entropy.events.NoJumpEvent":"No Jumping",
+  "forged_entropy.events.NothingEvent":"Nothing",
+  "forged_entropy.events.NoUseKeyEvent":"No Interacting Allowed",
+  "forged_entropy.events.OnePunchEvent":"One Punch",
+  "forged_entropy.events.OnlyBackwardsEvent":"Only Backwards Movement",
+  "forged_entropy.events.OnlySidewaysEvent":"Only Sideways Movement",
+    "forged_entropy.events.PhantomEvent":"Phantoms",
+    "forged_entropy.events.PitEvent":"Deep Pit",
+    "forged_entropy.events.PlaceCobwebBlockEvent":"Place Cobweb",
+  "forged_entropy.events.PlaceLavaBlockEvent":"Place Lava",
+    "forged_entropy.events.PoolEvent":"Hot Tub"
 }

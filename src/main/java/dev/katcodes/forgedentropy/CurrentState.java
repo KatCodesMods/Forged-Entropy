@@ -139,9 +139,38 @@ public class CurrentState {
      */
     public boolean wobble;
 
+    /**
+     * Lucky Drops 5
+     */
 
     public boolean luckyDrops;
 
+    /**
+     * Mouse Drifting
+     */
+    public boolean mouseDrifting;
+
+    public int mouseDriftingSignX;
+
+    public int mouseDriftingSignY;
+
+    /**
+     * No drops from blocks or entities
+     */
+    public boolean noDrops;
+
+
+    /**
+     * No jumping allowed
+     */
+    public boolean noJump;
+
+    public int shouldLaunchEntity = 0;
+
+    public int isOnePunchActivated=0;
+
+    public boolean onlyBackwardsMovement;
+    public boolean onlySidewaysMovement;
 
 
 

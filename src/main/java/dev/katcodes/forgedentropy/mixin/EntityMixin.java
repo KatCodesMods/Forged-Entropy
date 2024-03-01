@@ -51,6 +51,10 @@ public abstract class EntityMixin {
 
     @Inject(method="spawnAtLocation(Lnet/minecraft/world/item/ItemStack;F)Lnet/minecraft/world/entity/item/ItemEntity;",at=@At("HEAD"),cancellable = true)
     private void randomDrops(ItemStack stack, float yOffset, CallbackInfoReturnable<ItemEntity> cir) {
+        if(CurrentState.Get().noDrops) {
+            cir.setReturnValue(null);
+            cir.cancel();
+        }
         if(CurrentState.Get().luckyDrops) {
             if (stack.isEmpty()) {
                 cir.setReturnValue(null);

@@ -111,6 +111,27 @@ public class ChaosEventRegistry {
         EntropyEvents.put("LuckyDropsEvent",LuckyDropsEvent::new);
         EntropyEvents.put("MeteorRainEvent",MeteorRainEvent::new);
         EntropyEvents.put("MidasTouchEvent", MidasTouchEvent::new);
+        EntropyEvents.put("MiningSightEvent", MiningSightEvent::new);
+        EntropyEvents.put("MLGBucketEvent", MLGBucketEvent::new);
+        EntropyEvents.put("MouseDriftingEvent",MouseDriftingEvent::new);
+        EntropyEvents.put("NightVisionEvent",NightVisionEvent::new);
+        EntropyEvents.put("NoAttackingEvent",NoAttackingEvent::new);
+        EntropyEvents.put("NoDropsEvent",NoDropsEvent::new);
+        EntropyEvents.put("NoiseMachineEvent", NoiseMachineEvent::new);
+        EntropyEvents.put("NoJumpEvent", NoJumpEvent::new);
+        EntropyEvents.put("NothingEvent", NothingEvent::new);
+        EntropyEvents.put("NoUseKeyEvent", NoUseKeyEvent::new);
+        EntropyEvents.put("OnePunchEvent", OnePunchEvent::new);
+        EntropyEvents.put("OnlyBackwardsEvent", OnlyBackwardsEvent::new);
+        EntropyEvents.put("OnlySidewaysEvent", OnlySidewaysEvent::new);
+        EntropyEvents.put("PhantomEvent", PhantomEvent::new);
+        EntropyEvents.put("PitEvent", PitEvent::new);
+        EntropyEvents.put("PlaceCobwebBlockEvent", PlaceCobwebBlockEvent::new);
+        EntropyEvents.put("PlaceLavaBlockEvent", PlaceLavaBlockEvent::new);
+        EntropyEvents.put("PoolEvent", PoolEvent::new);
+        EntropyEvents.put("PumpkinViewEffect",PumpkinViewEvent::new);
+        EntropyEvents.put("RaidEvent",RaidEvent::new);
+        EntropyEvents.put("RainbowPathEvent",RainbowPathEvent::new);
     }
 
 

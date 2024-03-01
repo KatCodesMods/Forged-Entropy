@@ -6,7 +6,8 @@
   "mixins": [
     "BlockMixin",
     "EntityMixin",
-    "FallingBlockEntityAccessor"
+    "FallingBlockEntityAccessor",
+    "LivingEntityMixin"
   ],
   "client": [
     "BossBarAccessor",
@@ -14,6 +15,7 @@
     "GameRendererMixin",
     "KeyboardInputMixin",
     "LivingEntityRendererMixin",
+    "LocalPlayerMixin",
     "MinecraftClientAccessor",
     "MouseHandlerMixin",
     "MultiPlayerGameModeAccessor",

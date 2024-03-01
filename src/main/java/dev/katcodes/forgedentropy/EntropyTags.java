@@ -1,5 +1,6 @@
 package dev.katcodes.forgedentropy;
 
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -17,6 +18,7 @@ public class EntropyTags {
         public static final TagKey<Block> NOT_REPLACED_BY_ZEUS_ULT = net.minecraft.tags.BlockTags.create(new ResourceLocation("forged_entropy","not_replaced_by_zeus_ult"));
         public static final TagKey<Block> SHOWN_DURING_XRAY = net.minecraft.tags.BlockTags.create(new ResourceLocation("forged_entropy","shown_during_xray"));
         public static final TagKey<Block> VOID_SIGHT_BREAKS = net.minecraft.tags.BlockTags.create(new ResourceLocation("forged_entropy","void_sight_breaks"));
+
     }
 
     public static class EnchantmentTags {

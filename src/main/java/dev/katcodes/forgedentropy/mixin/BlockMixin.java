@@ -50,6 +50,8 @@ public abstract class BlockMixin {
 
     @Inject(method = "popResource(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)V", at = @At("HEAD"), cancellable = true)
     private static void randomDrops(Level pLevel, BlockPos pPos, ItemStack pStack, CallbackInfo ci) {
+        if(CurrentState.Get().noDrops)
+            ci.cancel();
         if(CurrentState.Get().luckyDrops) {
             ForgedEntropyMod.LOGGER.info("Lucky drops event is active");
             if (!pLevel.isClientSide && !pStack.isEmpty() && pLevel.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS) && !pLevel.restoringBlockSnapshots) {
