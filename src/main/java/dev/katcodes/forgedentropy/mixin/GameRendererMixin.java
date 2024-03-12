@@ -1,5 +1,7 @@
 package dev.katcodes.forgedentropy.mixin;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import dev.katcodes.forgedentropy.CurrentState;
 import dev.katcodes.forgedentropy.client.ForgedEntropyClient;
 import net.minecraft.client.Camera;
@@ -58,6 +60,13 @@ public class GameRendererMixin {
             } else {
                 ci.setReturnValue(updateFov(pActiveRenderInfo, pPartialTicks, pUseFOVSetting, CurrentState.Get().fov));
             }
+        }
+    }
+
+    @Inject(method="renderLevel", at=@At(value = "INVOKE", target="Lnet/minecraft/client/Camera;setup(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/world/entity/Entity;ZZF)V",shift=At.Shift.AFTER))
+    private void rollCamera(float pPartialTicks, long pFinishTimeNano, PoseStack pPoseStack, CallbackInfo ci) {
+        if(CurrentState.Get().cameraRoll!=0f) {
+            pPoseStack.mulPose(Axis.ZP.rotationDegrees(CurrentState.Get().cameraRoll));
         }
     }
 

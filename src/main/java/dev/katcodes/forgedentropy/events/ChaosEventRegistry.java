@@ -132,6 +132,10 @@ public class ChaosEventRegistry {
         EntropyEvents.put("PumpkinViewEffect",PumpkinViewEvent::new);
         EntropyEvents.put("RaidEvent",RaidEvent::new);
         EntropyEvents.put("RainbowPathEvent",RainbowPathEvent::new);
+        EntropyEvents.put("RainbowSheepEverywhereEvent",RainbowSheepEverywhereEvent::new);
+        EntropyEvents.put("RandomCameraTiltEvent", RandomCameraTiltEvent::new);
+        EntropyEvents.put("RandomCreeperEvent", RandomCreeperEvent::new);
+        EntropyEvents.put("RandomDropsEvent", RandomDropsEvent::new);
     }
 
 

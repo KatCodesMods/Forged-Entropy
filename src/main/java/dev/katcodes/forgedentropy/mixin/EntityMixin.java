@@ -15,6 +15,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Collection;
 
+import static dev.katcodes.forgedentropy.common.MixinUtils.getRandomItem;
+
 @Mixin(Entity.class)
 public abstract class EntityMixin {
 
@@ -55,7 +57,7 @@ public abstract class EntityMixin {
             cir.setReturnValue(null);
             cir.cancel();
         }
-        if(CurrentState.Get().luckyDrops) {
+        if(CurrentState.Get().luckyDrops || CurrentState.Get().randomDrops){
             if (stack.isEmpty()) {
                 cir.setReturnValue(null);
                 cir.cancel();
@@ -80,6 +82,8 @@ public abstract class EntityMixin {
         if(CurrentState.Get().luckyDrops) {
             stack.setCount(stack.getCount() * 5);
             return stack;
+        } else if(CurrentState.Get().randomDrops) {
+            return new ItemStack(getRandomItem(level),stack.getCount());
         }
         return stack;
     }

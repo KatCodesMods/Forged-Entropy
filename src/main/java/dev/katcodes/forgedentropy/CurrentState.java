@@ -171,7 +171,9 @@ public class CurrentState {
 
     public boolean onlyBackwardsMovement;
     public boolean onlySidewaysMovement;
-
+    public boolean rainbowSheepEverywhere;
+    public float cameraRoll;
+    public boolean randomDrops;
 
 
 }

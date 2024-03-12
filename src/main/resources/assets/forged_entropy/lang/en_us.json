@@ -106,5 +106,12 @@
     "forged_entropy.events.PitEvent":"Deep Pit",
     "forged_entropy.events.PlaceCobwebBlockEvent":"Place Cobweb",
   "forged_entropy.events.PlaceLavaBlockEvent":"Place Lava",
-    "forged_entropy.events.PoolEvent":"Hot Tub"
+    "forged_entropy.events.PoolEvent":"Hot Tub",
+    "forged_entropy.events.PumpkinViewEvent":"Pumpkin View",
+  "forged_entropy.events.RaidEvent":"Prepare to fight!",
+  "forged_entropy.events.RainbowPathEvent":"Rainbow Path",
+    "forged_entropy.events.RainbowSheepEverywhereEvent":"jeb_",
+  "forged_entropy.events.RandomCameraTiltEvent": "Tilted Camera",
+  "forged_entropy.events.RandomCreeperEvent": "Creeper Anxiety",
+    "forged_entropy.events.RandomDropsEvent": "Random Drops"
 }

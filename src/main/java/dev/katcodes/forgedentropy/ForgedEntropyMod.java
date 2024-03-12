@@ -12,6 +12,8 @@ import dev.katcodes.forgedentropy.server.EventHandler;
 import dev.katcodes.forgedentropy.server.ServerNetworkHandler;
 import dev.katcodes.forgedentropy.server.commands.EntropyCommands;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
